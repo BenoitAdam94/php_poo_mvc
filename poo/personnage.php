@@ -2,11 +2,15 @@
 
 
 class Personnage {
-    public $vie = 80;
-    public $atk = 20;
-    public $nom;
 
-    private $age; // a l'intérieur de la classe mais pas en dehors
+    const MAX_VIE = 100;
+
+
+    protected $vie = 80;
+    protected $atk = 20;
+    protected $nom;
+
+    protected $age; // a l'intérieur de la classe mais pas en dehors
 
     protected $poids; // On en reparle plus tard
 
@@ -32,7 +36,7 @@ class Personnage {
 
     public function regenerer ($vie = null) {
         if (is_null($vie)) {
-            $this->vie = 100;
+            $this->vie = self::MAX_VIE;
         } else {
             $this->vie +=  $vie;
         }
@@ -46,9 +50,9 @@ class Personnage {
         return $this->age;
     }
 
-    private function empecher_negatif(){
-        if($this->$vie <0 ) {
-            $this->$vie = 0;
+    protected function empecher_negatif(){
+        if($this->vie <0 ) {
+            $this->vie = 0;
         }
     }
 
