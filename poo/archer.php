@@ -3,12 +3,19 @@
 
 class Archer extends Personnage{
 
+    protected $vie = 40;
 
-    public $vie = 40;
-
-    public function attaque($cible){
-        $cible->vie -= 2 * $this->atk;
-        $cible->empecher_negatif();
+    public function __construct($nom){
+        parent::__construct($nom);
     }
 
+    public function attaque($cible){
+        $cible->vie -= $this->atk;
+        parent::attaque($cible);
+    }
+
+}
+
+class Arbaletrier extends Archer {
+    
 }
