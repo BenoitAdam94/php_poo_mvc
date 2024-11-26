@@ -11,7 +11,15 @@ $count = $pdo->exec('INSERT INTO articles SET titre="Mon Titre", date="' . date(
 
 $res = $pdo->query("SELECT * FROM articles");
 
+// var_dump($res->fetchAll(PDO::FETCH_OBJ));
 
+$datas = $res->fetchAll(PDO::FETCH_OBJ);
+
+var_dump($datas[0]->titre);
+
+//var_dump($datas[0]->titre);
+
+// 09:59
 ?>
 je suis la home
 
