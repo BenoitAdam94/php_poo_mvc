@@ -1,25 +1,16 @@
 <?php
 
-$pdo = new PDO('mysql:dbname=courspoo;host=localhost', 'root', '');
+use App\Database;
 
-// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$db = new Database('courspoo');
 
+$datas = $db->query('SELECT * FROM articles');
 
-// PDO EXEC
-$count = $pdo->exec('INSERT INTO articles SET titre="Mon Titre", date="' . date('Y-m-d H:i;s').  '"');
-// var_dump($count); // Verification, si 1 = requette executé
-
-$res = $pdo->query("SELECT * FROM articles");
-
-// var_dump($res->fetchAll(PDO::FETCH_OBJ));
-
-$datas = $res->fetchAll(PDO::FETCH_OBJ);
-
-var_dump($datas[0]->titre);
+var_dump($datas);
 
 //var_dump($datas[0]->titre);
 
-// 09:59
+
 ?>
 je suis la home
 
