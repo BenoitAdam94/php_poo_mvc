@@ -1,17 +1,15 @@
 <?php
-
-use App\Database;
-
-$db = new Database('courspoo');
-
-$datas = $db->query('SELECT * FROM articles');
-
-var_dump($datas);
-
-//var_dump($datas[0]->titre);
-
-
+foreach($db->query('SELECT * FROM articles') as $post):
 ?>
-je suis la home
+
+<li><a href="index.php?p=post&id=<?= $post->id; ?>"><?= $post->titre; ?></li>
+
+<?php endforeach; ?>
+
+
+<p>je suis la home</p>
 
 <a href="index.php?p=single">Single PHP</a>
+
+
+<!-- 20:00 -->

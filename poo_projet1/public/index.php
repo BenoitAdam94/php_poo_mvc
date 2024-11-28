@@ -4,6 +4,12 @@ require '../app/Autoloader.php';
 
 \App\Autoloader::register();
 
+// Initialisation des objets
+// connection a la bdd
+
+use App\Database;
+$db = new Database('courspoo');
+
 if(isset($_GET['p'])){
     $p = $_GET['p'];
 } else {
@@ -15,6 +21,8 @@ if($p === 'home') {
 } elseif ($p === 'single') {
     require 'pages/single.php';
 }
+
+
 
 $content = ob_get_clean();
 
