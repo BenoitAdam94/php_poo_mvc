@@ -2,12 +2,10 @@
 foreach($db->query('SELECT * FROM articles', 'App\table\article') as $post):
 ?>
 
-<?php var_dump($post); ?>
-
 <h2><a href="<?= $post->getURL(); ?>"><?= $post->titre; ?></a></h2>
 
 
-<p><?php $post->getExtrait(); ?></p>
+<p><?= $post->getExtrait(); ?></p>
 <?php endforeach; ?>
 
 

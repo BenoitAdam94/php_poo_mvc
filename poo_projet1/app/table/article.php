@@ -9,7 +9,12 @@ class article{
     }
 
     public function getExtrait(){
-        return $this->contenu;
+        $html = substr($this->contenu, 0, 50) . '...';
+
+        $html .= '<a href="' . $this->getURL() . '">Voir la Suite</a>';
+
+        return $html;
+
     }
 
 
