@@ -23,7 +23,7 @@ class Database
         $this->db_host = $db_host;
     }
 
-    private function getPDO()
+    public function getPDO()
     { // Se connecter à la DB
 
         if ($this->pdo == null) { // Accesseur pour 1 seule fois la connection à la BDD
@@ -44,4 +44,11 @@ class Database
 
         return $datas;
     }
+/*
+    public function prepare($statement, $attributes, $class_name){
+        $req = $this->getPDO()->prepare($statement);
+        $req->execute($attributes);
+        $datas = $req->fetchAll(PDO::FETCH_CLASS, $class_name);
+        return $datas;
+    }*/
 }

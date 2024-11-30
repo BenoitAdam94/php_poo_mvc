@@ -20,6 +20,8 @@ if($p === 'home') {
     require 'pages/home.php';
 } elseif ($p === 'single') {
     require 'pages/single.php';
+} elseif ($p === 'article') {
+    require 'pages/article.php';
 }
 
 
